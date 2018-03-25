@@ -5,10 +5,10 @@ jobs:
       - image: circleci/golang:latest
     working_directory: /go/src/github.com/koron-go/tdata
     steps:
-      - checkout
       - run:
           name: Golang version
           command: go version
+      - checkout
       - run:
           name: Install dependencies
           command: go get -v -t -d ./...

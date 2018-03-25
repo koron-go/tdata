@@ -1,5 +1,8 @@
 # tdata - testdata load utility
 
+[![GoDoc](https://godoc.org/github.com/koron-go/tdata?status.svg)](https://godoc.org/github.com/koron-go/tdata)
+[![CircleCI](https://circleci.com/gh/koron-go/tdata.svg?style=svg)](https://circleci.com/gh/koron-go/tdata)
+
 tdata and related pacakges help to access files in testdata/ directory for
 test.
 
