@@ -19,7 +19,7 @@ func Unmarshal(t *testing.T, v interface{}) {
 		f.Close()
 	}
 	f.Close()
-	err = yaml.Unmarshal(b, &v)
+	err = yaml.Unmarshal(b, v)
 	if err != nil {
 		t.Fatalf("failed to decode testdata as YAML: %s", err)
 	}

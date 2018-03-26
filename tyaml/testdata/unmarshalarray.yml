@@ -1,0 +1,6 @@
+- foo: abc
+  bar: 123
+- foo: xyz
+  bar: 999
+- foo: foo
+  bar: 600
