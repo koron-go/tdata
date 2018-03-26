@@ -35,7 +35,7 @@ func UnmarshalJSON(t *testing.T, v interface{}) {
 	if err != nil {
 		t.Fatalf("failed to convert to JSON: %s", err)
 	}
-	err = json.Unmarshal(b, &v)
+	err = json.Unmarshal(b, v)
 	if err != nil {
 		t.Fatalf("failed to decode as JSON: %s", err)
 	}
