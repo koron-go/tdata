@@ -1,4 +1,4 @@
-package tdata
+package tyaml
 
 import (
 	"encoding/json"

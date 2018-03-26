@@ -1,4 +1,4 @@
-package tdata
+package tjson
 
 import (
 	"encoding/json"
