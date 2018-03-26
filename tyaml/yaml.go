@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/koron-go/tdata"
-	"github.com/koron-go/tdata/internal/yaml"
+	"gopkg.in/yaml.v2"
 )
 
 // Unmarshal decodes a testdata file (.yml) as YAML.
