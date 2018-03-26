@@ -13,7 +13,7 @@ var TemplateData interface{}
 // ExecuteText loads a testdata file as template and expand/execute it.
 func ExecuteText(t *testing.T, ext string) io.Reader {
 	t.Helper()
-	tmpl, err := template.New(t.Name()).ParseFiles(name(t, ext))
+	tmpl, err := template.ParseFiles(name(t, ext))
 	if err != nil {
 		t.Fatalf("failed to parse template: %s", err)
 	}
