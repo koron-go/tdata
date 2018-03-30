@@ -4,6 +4,8 @@ import "testing"
 
 func TestNorm(t *testing.T) {
 	for _, d := range []struct{ in, exp string }{
+		{"TestWithJSON", "withjson"},
+		{"BenchWithJSON", "benchwithjson"},
 		{"a/b/c", "a/b/c"},
 		{"TestFoo/Bar/Baz", "foo/bar/baz"},
 		{"TestFoo/Bar Baz", "foo/bar_baz"},

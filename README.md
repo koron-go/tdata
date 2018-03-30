@@ -9,7 +9,7 @@ test.
 ## Examples
 
 ```golang
-import "github.com/koron-go/tdata/tjson"
+import "github.com/koron-go/tdata"
 
 type data struct {
 	Foo string `json:"foo"`
@@ -18,7 +18,7 @@ type data struct {
 
 func TestWithJSON(t *testing.T) {
 	var v []data
-	tjson.Unmarshal(t, &v)
+	tdata.New(t).JSON().Decode(&v)
 	// use v as test data: load from "testdata/withjson.json"
 }
 ```
