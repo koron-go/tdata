@@ -99,6 +99,7 @@ func (td *tdata) Decode(v interface{}) {
 	if td.mode != yaml && td.mode != json {
 		panic(fmt.Sprintf("unexpected mode in Decode: %v", td.mode))
 	}
+	mode := td.mode
 	td.mode = fin
 	if td.tb != nil {
 		td.tb.Helper()
@@ -109,7 +110,7 @@ func (td *tdata) Decode(v interface{}) {
 		td.fail("failed to open testdata: %s", err)
 	}
 
-	if td.mode == yaml {
+	if mode == yaml {
 		err := encyaml.Unmarshal(b, v)
 		if err != nil {
 			td.fail("failed to decode testdata as YAML: %s", err)
