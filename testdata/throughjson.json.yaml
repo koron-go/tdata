@@ -1,0 +1,9 @@
+- foo: yaml+json_ABC
+  bar: 123
+  baz: true
+- foo: yaml+json_XYZ
+  bar: 999
+  baz: true
+- foo: yaml+json_ABC
+  bar: 123
+  baz: false

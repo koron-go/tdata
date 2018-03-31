@@ -1,0 +1,9 @@
+- foo: yamlABC
+  bar: 123
+  baz: true
+- foo: yamlXYZ
+  bar: 999
+  baz: true
+- foo: yamlABC
+  bar: 123
+  baz: false

@@ -1,0 +1,5 @@
+[
+  { "foo": "jsonABC", "bar": 123, "baz": true },
+  { "foo": "jsonXYZ", "bar": 999, "baz": true },
+  { "foo": "jsonABC", "bar": 123, "baz": false }
+]
