@@ -81,7 +81,7 @@ func (td *tdata) YAML() YAMLDecoder {
 		panic(fmt.Sprintf("unexpected mode in YAML: %v", td.mode))
 	}
 	td.mode = yaml
-	td.revExts = append(td.revExts, ".yaml")
+	td.revExts = append(td.revExts, ".yml")
 	td.yaml = true
 	return td
 }
