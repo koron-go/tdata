@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"gopkg.in/yaml.v2"
+	"github.com/koron-go/tdata/internal/yaml"
 )
 
 // An example showing how to unmarshal embedded

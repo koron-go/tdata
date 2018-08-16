@@ -12,7 +12,7 @@ import (
 	"testing"
 	"text/template"
 
-	encyaml "gopkg.in/yaml.v2"
+	encyaml "github.com/koron-go/tdata/internal/yaml"
 )
 
 // New creates a testdata loader.

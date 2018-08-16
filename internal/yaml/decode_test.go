@@ -9,7 +9,7 @@ import (
 	"time"
 
 	. "gopkg.in/check.v1"
-	"gopkg.in/yaml.v2"
+	"github.com/koron-go/tdata/internal/yaml"
 )
 
 var unmarshalIntTest = 123
@@ -527,7 +527,7 @@ var unmarshalTests = []struct {
 	// issue #295 (allow scalars with colons in flow mappings and sequences)
 	{
 		"a: {b: https://github.com/go-yaml/yaml}",
-		map[string]interface{}{"a": map[interface{}]interface{}{
+		map[string]interface{}{"a": map[string]interface{}{
 			"b": "https://github.com/go-yaml/yaml",
 		}},
 	},
@@ -575,7 +575,7 @@ var unmarshalTests = []struct {
 	// Issue #39.
 	{
 		"a:\n b:\n  c: d\n",
-		map[string]struct{ B interface{} }{"a": {map[interface{}]interface{}{"c": "d"}}},
+		map[string]struct{ B interface{} }{"a": {map[string]interface{}{"c": "d"}}},
 	},
 
 	// Custom map type.
@@ -780,12 +780,12 @@ var decoderTests = []struct {
 }, {
 	"a: b",
 	[]interface{}{
-		map[interface{}]interface{}{"a": "b"},
+		map[string]interface{}{"a": "b"},
 	},
 }, {
 	"---\na: b\n...\n",
 	[]interface{}{
-		map[interface{}]interface{}{"a": "b"},
+		map[string]interface{}{"a": "b"},
 	},
 }, {
 	"---\n'hello'\n...\n---\ngoodbye\n...\n",
@@ -842,8 +842,8 @@ var unmarshalErrorTests = []struct {
 	{"a: &a\n  b: *a\n", "yaml: anchor 'a' value contains itself"},
 	{"value: -", "yaml: block sequence entries are not allowed in this context"},
 	{"a: !!binary ==", "yaml: !!binary value contains invalid base64 data"},
-	{"{[.]}", `yaml: invalid map key: \[\]interface \{\}\{"\."\}`},
-	{"{{.}}", `yaml: invalid map key: map\[interface\ \{\}\]interface \{\}\{".":interface \{\}\(nil\)\}`},
+	//{"{[.]}", `yaml: invalid map key: \[\]interface \{\}\{"\."\}`},
+	//{"{{.}}", `yaml: invalid map key: map\[interface\ \{\}\]interface \{\}\{".":interface \{\}\(nil\)\}`},
 	{"b: *a\na: &a {c: 1}", `yaml: unknown anchor 'a' referenced`},
 	{"%TAG !%79! tag:yaml.org,2002:\n---\nv: !%79!int '1'", "yaml: did not find expected whitespace"},
 }
@@ -869,7 +869,7 @@ var unmarshalerTests = []struct {
 	data, tag string
 	value     interface{}
 }{
-	{"_: {hi: there}", "!!map", map[interface{}]interface{}{"hi": "there"}},
+	{"_: {hi: there}", "!!map", map[string]interface{}{"hi": "there"}},
 	{"_: [1,A]", "!!seq", []interface{}{1, "A"}},
 	{"_: 10", "!!int", 10},
 	{"_: null", "!!null", nil},
@@ -933,7 +933,7 @@ func (s *S) TestUnmarshalerWholeDocument(c *C) {
 	obj := &unmarshalerType{}
 	err := yaml.Unmarshal([]byte(unmarshalerTests[0].data), obj)
 	c.Assert(err, IsNil)
-	value, ok := obj.value.(map[interface{}]interface{})
+	value, ok := obj.value.(map[string]interface{})
 	c.Assert(ok, Equals, true, Commentf("value: %#v", obj.value))
 	c.Assert(value["_"], DeepEquals, unmarshalerTests[0].value)
 }

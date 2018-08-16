@@ -12,7 +12,7 @@ import (
 	"os"
 
 	. "gopkg.in/check.v1"
-	"gopkg.in/yaml.v2"
+	"github.com/koron-go/tdata/internal/yaml"
 )
 
 var marshalIntTest = 123
