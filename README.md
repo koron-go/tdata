@@ -1,7 +1,8 @@
 # tdata - testdata load utility
 
 [![GoDoc](https://godoc.org/github.com/koron-go/tdata?status.svg)](https://godoc.org/github.com/koron-go/tdata)
-[![CircleCI](https://circleci.com/gh/koron-go/tdata.svg?style=svg)](https://circleci.com/gh/koron-go/tdata)
+[![CircleCI](https://img.shields.io/circleci/project/github/koron-go/tdata/master.svg)](https://circleci.com/gh/koron-go/tdata/tree/master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/koron-go/tdata)](https://goreportcard.com/report/github.com/koron-go/tdata)
 
 tdata helps to access files in testdata/ directory for test.
 
